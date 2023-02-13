@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Έξυπνη Ειδοποίηση</string>
+    <string name="change_lang">Αλλαγή Γλώσσας</string>
+    <string name="hello_world">Γεια σου κόσμε</string>
+    <string name="login_email_hint">Ηλ. Διεύθυνση</string>
+    <string name="login_password_hint">Κωδικός</string>
+    <string name="login_button">Σύνδεση</string>
+    <string name="login_forgot_password">Ξεχάσατε τον κωδικό?</string>
+    <string name="login_title">Συνδεθείτε</string>
+</resources>
