@@ -7,4 +7,19 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Light mode colors. -->
+    <color name="primary_blue">#011857</color>
+    <color name="primary_blue_variant">#4BA7C7</color>
+    <color name="secondary_pink">#8E5B65</color>
+    <color name="secondary_pink_variant">#AC5976</color>
+    <color name="link_color">#FF0288D1</color>
+
+    <!-- Dark mode colors. (Might need change) -->
+    <color name="dark_primary_orange">#7a93ff</color>
+    <color name="dark_primary_orange_variant">#649FE8</color>
+    <color name="dark_secondary_teal">#b996ff</color>
+    <color name="dark_secondary_teal_variant">#847DE8</color>
+    <color name="dark_link_color">#7a93ff</color>
+
 </resources>
