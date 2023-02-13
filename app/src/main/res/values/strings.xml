@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SmartAlert</string>
+    <string name="change_lang">Change Language</string>
+    <string name="hello_world">Hello World</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_button">Login</string>
+    <string name="login_forgot_password">Forgot your password?</string>
+    <string name="login_title">Login</string>
 </resources>
