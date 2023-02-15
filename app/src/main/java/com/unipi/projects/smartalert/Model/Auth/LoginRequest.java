@@ -1,4 +1,4 @@
-package com.unipi.projects.smartalert.Model;
+package com.unipi.projects.smartalert.Model.Auth;
 
 public class LoginRequest {
     private String email;
