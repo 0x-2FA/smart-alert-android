@@ -7,4 +7,15 @@
     <string name="login_button">Login</string>
     <string name="login_forgot_password">Forgot your password?</string>
     <string name="login_title">Login</string>
+    <string name="create_event_title">New Event</string>
+    <string name="create_event_comment_hint">Comment</string>
+    <string name="create_event_comment">Comment</string>
+    <string name="send">Send</string>
+    <string-array name="types">
+        <item>Earthquake</item>
+        <item>Fire</item>
+        <item>Flood</item>
+    </string-array>
+    <string name="type_event_title">Event type</string>
+    <string name="select_type_spinner">Select...</string>
 </resources>
