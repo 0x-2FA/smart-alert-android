@@ -2,7 +2,6 @@ package com.unipi.projects.smartalert.Model.Auth;
 
 public class AuthResponse {
     private String email;
-    private String error;
 
     public String getEmail() {
         return email;
@@ -12,9 +11,4 @@ public class AuthResponse {
         this.email = email;
     }
 
-    public String getError() { return error; }
-
-    public void setError(String error) {
-        this.error = error;
-    }
 }
