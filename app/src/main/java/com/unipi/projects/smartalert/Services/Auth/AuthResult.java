@@ -1,12 +1,19 @@
 package com.unipi.projects.smartalert.Services.Auth;
 
-import com.unipi.projects.smartalert.Model.Auth.AuthResponse;
-
 public class AuthResult {
-    public AuthResponse authResponse;
+    private String email;
+    private String userId;
 
-    public AuthResult(AuthResponse authResponse) {
-        this.authResponse = authResponse;
+    public String getEmail() { return email; }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getUserId() { return userId; }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
 }
