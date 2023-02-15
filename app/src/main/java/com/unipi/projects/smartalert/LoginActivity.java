@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.unipi.projects.smartalert.Model.Auth.AuthResponse;
 import com.unipi.projects.smartalert.Services.Auth.AuthResult;
 import com.unipi.projects.smartalert.Services.Auth.AuthService;
 
@@ -64,14 +63,11 @@ public class LoginActivity extends AppCompatActivity {
 
                                 @Override
                                 public void onSuccess(@NonNull AuthResult authResult) {
-                                    authResult.authResponse = new AuthResponse();
-                                    authResult.authResponse.setEmail(email);
-
-                                    Log.i("WOKRS", authResult.authResponse.getEmail());
 
                                     Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
 
-                                    mainIntent.putExtra("email", authResult.authResponse.getEmail());
+                                    mainIntent.putExtra("email", authResult.getEmail());
+                                    mainIntent.putExtra("userId", authResult.getUserId());
 
                                     startActivity(mainIntent);
                                 }
@@ -82,7 +78,6 @@ public class LoginActivity extends AppCompatActivity {
                                     if(e instanceof HttpException) {
                                         HttpException error = (HttpException) e;
                                         String errorResponse = error.response().message();
-
 
                                         if(errorResponse.contains("Bad")) {
 
@@ -96,7 +91,6 @@ public class LoginActivity extends AppCompatActivity {
 
                                     Toast.makeText(getApplicationContext(),
                                             "Failed to connect to server", Toast.LENGTH_SHORT).show();
-
                                 }
                             }
                     );
