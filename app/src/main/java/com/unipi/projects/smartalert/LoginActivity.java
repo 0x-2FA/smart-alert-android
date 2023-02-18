@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.unipi.projects.smartalert.Services.Auth.AuthResult;
@@ -31,6 +32,8 @@ public class LoginActivity extends AppCompatActivity {
         EditText passwordEditText = findViewById(R.id.passwordEditText);
 
         Button loginButton = findViewById(R.id.loginButton);
+
+        TextView registerLink = findViewById(R.id.registerLink);
 
         loginButton.setOnClickListener(
                 (view) -> {
@@ -96,5 +99,11 @@ public class LoginActivity extends AppCompatActivity {
                     );
                 }
         );
+
+        registerLink.setOnClickListener(
+                (view) -> {
+                    Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+                    startActivity(registerIntent);
+        });
     }
 }
