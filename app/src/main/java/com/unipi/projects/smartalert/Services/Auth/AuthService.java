@@ -3,6 +3,7 @@ package com.unipi.projects.smartalert.Services.Auth;
 import android.app.Activity;
 
 import com.unipi.projects.smartalert.Model.Auth.LoginRequest;
+import com.unipi.projects.smartalert.Model.Auth.RegisterRequest;
 import com.unipi.projects.smartalert.Services.RetrofitService;
 
 import io.reactivex.rxjava3.core.Single;
@@ -27,7 +28,18 @@ public class AuthService implements IAuthService{
     }
 
     @Override
-    public void Register(String email, String phone, String password, Activity activity) {
+    public Single<AuthResult> Register(String email, String phone, String password) {
 
+        RegisterRequest registerRequest = new RegisterRequest();
+
+        registerRequest.setEmail(email);
+        registerRequest.setPhone(phone);
+        registerRequest.setPassword(password);
+
+        IAuthHttp authHttp = RetrofitService.retrofit.create(IAuthHttp.class);
+
+        Single<AuthResult> authCall = authHttp.Register(registerRequest);
+
+        return authCall;
     }
 }
