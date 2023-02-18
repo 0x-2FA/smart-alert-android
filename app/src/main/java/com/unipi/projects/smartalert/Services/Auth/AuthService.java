@@ -30,6 +30,8 @@ public class AuthService implements IAuthService{
     @Override
     public Single<AuthResult> Register(String email, String phone, String password) {
 
+        RetrofitService retrofitService = new RetrofitService("http://192.168.1.75:12021");
+
         RegisterRequest registerRequest = new RegisterRequest();
 
         registerRequest.setEmail(email);
