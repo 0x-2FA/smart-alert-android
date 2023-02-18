@@ -82,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                                         if(errorResponse.contains("Bad")) {
 
                                             Toast.makeText(getApplicationContext(),
-                                                    "User not found", Toast.LENGTH_SHORT).show();
+                                                    "Invalid credentials", Toast.LENGTH_SHORT).show();
                                             return;
                                         }
                                         Log.e("WORKS", errorResponse);
