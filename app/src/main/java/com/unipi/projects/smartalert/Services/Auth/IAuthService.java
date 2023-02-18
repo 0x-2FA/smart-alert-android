@@ -6,5 +6,5 @@ import io.reactivex.rxjava3.core.Single;
 
 public interface IAuthService {
     public Single<AuthResult> Login(String email, String password);
-    public void Register(String email, String phone, String password, Activity activity);
+    public Single<AuthResult> Register(String email, String phone, String password);
 }
