@@ -13,7 +13,7 @@ public interface IAuthHttp {
     Single<AuthResult> Login(@Body LoginRequest request);
 
     @POST("/auth/register")
-    Observable<RegisterRequest> Register(@Body RegisterRequest request);
+    Single<AuthResult> Register(@Body RegisterRequest request);
 
 //    @POST("/auth/logout")
 //    Call<LoginRequest> Logout(@Body LogoutRequest request);
