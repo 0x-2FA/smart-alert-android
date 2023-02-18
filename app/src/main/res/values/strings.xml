@@ -19,4 +19,5 @@
     <string name="declined_location_request_title">Declined request for location tracking</string>
     <string name="declined_location_request_message">This app depends on your location. By not granting permission to your location you will not be able to send new events.</string>
     <string name="location_sent_successfully">Location sent successfully</string>
+    <string name="register_here">Register here</string>
 </resources>
