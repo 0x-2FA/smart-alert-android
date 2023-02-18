@@ -12,11 +12,12 @@
     <string name="create_event_comment_hint">Σχόλιο</string>
     <string name="create_event_comment">Σχολιάστε</string>
     <string name="send">Στείλτε</string>
-    <string-array name="types">
-        <item>Σεισμός</item>
-        <item>Φωτιά</item>
-        <item>Πλημμύρα</item>
-    </string-array>
+    <string name="register_title">Εγγραφείτε</string>
+    <string name="register_button">Εγγραφή</string>
+    <string name="register_phone_hint">Τηλεφωνο</string>
     <string name="type_event_title">Είδος γεγονούς</string>
     <string name="select_type_spinner">Επιλέξτε...</string>
+    <string name="declined_location_request_title">Απορρίψατε αίτηση για εντοπισμό θέσης</string>
+    <string name="declined_location_request_message">Αυτή η εφαρμογή εξαρτάται από την τοποθεσία σας. Αν δεν δώσετε άδεια για την τοποθεσία σας, δεν θα μπορείτε να στείλετε νέα γεγονότα.</string>
+    <string name="location_sent_successfully">Η τοποθεσία στάλθηκε επιτυχώς</string>
 </resources>
