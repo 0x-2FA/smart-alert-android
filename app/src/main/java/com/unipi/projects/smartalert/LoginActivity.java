@@ -79,12 +79,12 @@ public class LoginActivity extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(@NonNull AuthResult authResult) {
 
-                                    Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+                                    Intent profileIntent = new Intent(LoginActivity.this, ProfileActivity.class);
 
-                                    mainIntent.putExtra("email", authResult.getEmail());
-                                    mainIntent.putExtra("userId", authResult.getUserId());
+                                    profileIntent.putExtra("email", authResult.getEmail());
+                                    profileIntent.putExtra("userId", authResult.getUserId());
 
-                                    startActivity(mainIntent);
+                                    startActivity(profileIntent);
                                     LoginActivity.this.finish();
                                 }
 
