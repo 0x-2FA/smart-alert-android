@@ -15,7 +15,7 @@
     <string name="register_title">Εγγραφείτε</string>
     <string name="register_button">Εγγραφή</string>
     <string name="register_phone_hint">Τηλεφωνο</string>
-    <string name="type_event_title">Είδος γεγονούς</string>
+    <string name="type_event_title">Είδος γεγονότος</string>
     <string name="select_type_spinner">Επιλέξτε...</string>
     <string name="declined_location_request_title">Απορρίψατε αίτηση για εντοπισμό θέσης</string>
     <string name="declined_location_request_message">Αυτή η εφαρμογή εξαρτάται από την τοποθεσία σας. Αν δεν δώσετε άδεια για την τοποθεσία σας, δεν θα μπορείτε να στείλετε νέα γεγονότα.</string>
