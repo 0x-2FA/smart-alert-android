@@ -3,14 +3,24 @@ package com.unipi.projects.smartalert;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.unipi.projects.smartalert.Services.Auth.AuthResult;
 import com.unipi.projects.smartalert.Services.Auth.AuthService;
+
+import java.util.Locale;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;
@@ -27,11 +37,17 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        setupSpinnerSelection();
+        onSpinnerChanged();
+
         EditText emailEditText = findViewById(R.id.emailEditText);
         EditText phoneEditText = findViewById(R.id.phoneEditText);
         EditText passwordEditText = findViewById(R.id.passwordEditText);
 
         Button registerButton = findViewById(R.id.registerButton);
+
+        TextView loginLink = findViewById(R.id.loginLinkTextView);
+
 
         registerButton.setOnClickListener(
                 (view) -> {
@@ -40,17 +56,17 @@ public class RegisterActivity extends AppCompatActivity {
                     String password = passwordEditText.getText().toString().trim();
 
                     if(email.isEmpty()) {
-                        emailEditText.setError("Email field is required");
+                        emailEditText.setError(RegisterActivity.this.getResources().getString(R.string.email_required));
                         return;
                     }
 
                     if(phone.isEmpty()) {
-                        emailEditText.setError("Phone field is required");
+                        emailEditText.setError(RegisterActivity.this.getResources().getString(R.string.phone_required));
                         return;
                     }
 
                     if(password.isEmpty()) {
-                        passwordEditText.setError("Password field is required");
+                        passwordEditText.setError(RegisterActivity.this.getResources().getString(R.string.password_required));
                         return;
                     }
 
@@ -71,12 +87,13 @@ public class RegisterActivity extends AppCompatActivity {
                                         @Override
                                         public void onSuccess(@NonNull AuthResult authResult) {
 
-                                            Intent mainIntent = new Intent(RegisterActivity.this, MainActivity.class);
+                                            Intent profileIntent = new Intent(RegisterActivity.this, ProfileActivity.class);
 
-                                            mainIntent.putExtra("email", authResult.getEmail());
-                                            mainIntent.putExtra("userId", authResult.getUserId());
+                                            profileIntent.putExtra("email", authResult.getEmail());
+                                            profileIntent.putExtra("userId", authResult.getUserId());
 
-                                            startActivity(mainIntent);
+                                            startActivity(profileIntent);
+                                            RegisterActivity.this.finish();
                                         }
 
                                         @Override
@@ -89,19 +106,73 @@ public class RegisterActivity extends AppCompatActivity {
                                                 if(errorResponse.contains("Bad")) {
 
                                                     Toast.makeText(getApplicationContext(),
-                                                            "Invalid credentials", Toast.LENGTH_SHORT).show();
+                                                            RegisterActivity.this.getResources().getString(R.string.bad_request), Toast.LENGTH_SHORT).show();
                                                     return;
                                                 }
-                                                Log.e("WORKS", errorResponse);
-
                                             }
 
                                             Toast.makeText(getApplicationContext(),
-                                                    "Failed to connect to server", Toast.LENGTH_SHORT).show();
+                                                    RegisterActivity.this.getResources().getString(R.string.failed_server), Toast.LENGTH_SHORT).show();
                                         }
                                     }
                             );
                 }
         );
+
+        loginLink.setOnClickListener(
+                (view) -> {
+                    Intent loginIntent = new Intent(RegisterActivity.this, LoginActivity.class);
+                    startActivity(loginIntent);
+                });
+    }
+
+    private void setupSpinnerSelection() {
+        Spinner spinner = findViewById(R.id.selectLangSpinner);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.lang_array, android.R.layout.simple_spinner_item);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner.setAdapter(adapter);
+    }
+
+    private void onSpinnerChanged() {
+        Spinner spinner = findViewById(R.id.selectLangSpinner);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if (adapterView.getSelectedItemPosition() == 1)
+                {
+                    changeLocale("en");
+                }
+                else if(adapterView.getSelectedItemPosition() == 2)
+                {
+                    changeLocale("el");
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+    private void changeLocale(String language) {
+        Locale locale = new Locale(language);
+        Resources resources = this.getResources();
+        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+
+        Locale.setDefault(locale);
+
+        Configuration config = resources.getConfiguration();
+        config.setLocale(locale);
+
+        resources.updateConfiguration(config, displayMetrics);
     }
 }
