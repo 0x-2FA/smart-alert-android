@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="lang_array">Languages</string-array>
+    <string-array name="lang_array">
+        <item>-</item>
+        <item>English</item>
+        <item>Greek</item>
+    </string-array>
     <string-array name="types">
         <item>Earthquake</item>
         <item>Fire</item>

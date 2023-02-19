@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="lang_array">Languages</string-array>
+    <string-array name="lang_array">
+        <item>-</item>
+        <item>Αγγλικά</item>
+        <item>Ελληνικά</item>
+    </string-array>
     <string-array name="types">
         <item>Σεισμός</item>
         <item>Φωτιά</item>
