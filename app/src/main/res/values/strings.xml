@@ -20,4 +20,10 @@
     <string name="declined_location_request_message">This app depends on your location. By not granting permission to your location you will not be able to send new events.</string>
     <string name="location_sent_successfully">Location sent successfully</string>
     <string name="register_here">Register here</string>
+    <string name="email_required">Email field is required</string>
+    <string name="phone_required">Phone field is required</string>
+    <string name="password_required">Password field is required</string>
+    <string name="bad_request">Invalid credentials</string>
+    <string name="failed_server">Failed to connect to server</string>
+    <string name="login_here">Login here</string>
 </resources>

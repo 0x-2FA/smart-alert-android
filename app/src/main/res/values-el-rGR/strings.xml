@@ -21,4 +21,10 @@
     <string name="declined_location_request_message">Αυτή η εφαρμογή εξαρτάται από την τοποθεσία σας. Αν δεν δώσετε άδεια για την τοποθεσία σας, δεν θα μπορείτε να στείλετε νέα γεγονότα.</string>
     <string name="location_sent_successfully">Η τοποθεσία στάλθηκε επιτυχώς</string>
     <string name="register_here">Εγγραφείτε εδώ</string>
+    <string name="email_required">Το πεδίο της ηλ. διεύθυνση είναι υποχρεωτικό</string>
+    <string name="phone_required">Το πεδίο τηλεφώνου είναι υποχρεωτικό</string>
+    <string name="password_required">Το πεδίο κωδικού πρόσβασης είναι υποχρεωτικό</string>
+    <string name="bad_request">Μη έγκυρα στοιχεία πρόσβασης</string>
+    <string name="failed_server">Αποτυχία σύνδεσης με τον διακομιστή</string>
+    <string name="login_here">Συνδεθείτε εδώ</string>
 </resources>
