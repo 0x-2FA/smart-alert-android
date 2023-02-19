@@ -27,4 +27,8 @@
     <string name="bad_request">Μη έγκυρα στοιχεία πρόσβασης</string>
     <string name="failed_server">Αποτυχία σύνδεσης με τον διακομιστή</string>
     <string name="login_here">Συνδεθείτε εδώ</string>
+    <string name="statistics_text">Στατιστικά</string>
+    <string name="flood_event_text">Γεγονότα Πλημμύρας</string>
+    <string name="fire_event_text">Γεγονότα Πυρκαγιάς</string>
+    <string name="earthquake_event_text">Γεγονότα Σεισμού</string>
 </resources>

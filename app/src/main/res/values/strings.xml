@@ -26,4 +26,8 @@
     <string name="bad_request">Invalid credentials</string>
     <string name="failed_server">Failed to connect to server</string>
     <string name="login_here">Login here</string>
+    <string name="statistics_text">Statistics</string>
+    <string name="flood_event_text">Flood Events</string>
+    <string name="fire_event_text">Fire Events</string>
+    <string name="earthquake_event_text">Earthquake Events</string>
 </resources>
