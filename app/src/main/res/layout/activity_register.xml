@@ -93,7 +93,7 @@
         app:layout_constraintTop_toBottomOf="@+id/passwordTextInputLayout" />
 
     <TextView
-        android:id="@+id/forgotPasswordTextView"
+        android:id="@+id/loginLinkTextView"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -104,6 +104,14 @@
         android:textColor="?attr/link_color"
         app:layout_constraintStart_toStartOf="@+id/registerButton"
         app:layout_constraintTop_toBottomOf="@+id/registerButton" />
+
+    <Spinner
+        android:id="@+id/selectLangSpinner"
+        style="@android:style/Widget.Material.Light.Spinner"
+        android:layout_width="112dp"
+        android:layout_height="38dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
