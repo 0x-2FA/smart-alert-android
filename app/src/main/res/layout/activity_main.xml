@@ -24,7 +24,7 @@
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:text="@string/create_event_title"
         android:textSize="48sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
@@ -86,5 +86,13 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/editTextMultiLine" />
+
+    <Spinner
+        android:id="@+id/selectLangSpinner"
+        style="@android:style/Widget.Material.Light.Spinner"
+        android:layout_width="112dp"
+        android:layout_height="38dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
