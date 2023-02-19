@@ -3,15 +3,25 @@ package com.unipi.projects.smartalert;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
+
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.unipi.projects.smartalert.Services.Auth.AuthResult;
 import com.unipi.projects.smartalert.Services.Auth.AuthService;
+
+import java.util.Locale;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;
@@ -27,6 +37,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        setupSpinnerSelection();
+        onSpinnerChanged();
 
         EditText emailEditText = findViewById(R.id.emailEditText);
         EditText passwordEditText = findViewById(R.id.passwordEditText);
@@ -41,12 +53,12 @@ public class LoginActivity extends AppCompatActivity {
                     String password = passwordEditText.getText().toString().trim();
 
                     if(email.isEmpty()) {
-                        emailEditText.setError("Email field is required");
+                        emailEditText.setError(LoginActivity.this.getResources().getString(R.string.email_required));
                         return;
                     }
 
                     if(password.isEmpty()) {
-                        passwordEditText.setError("Password field is required");
+                        passwordEditText.setError(LoginActivity.this.getResources().getString(R.string.password_required));
                         return;
                     }
 
@@ -73,6 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                                     mainIntent.putExtra("userId", authResult.getUserId());
 
                                     startActivity(mainIntent);
+                                    LoginActivity.this.finish();
                                 }
 
                                 @Override
@@ -85,15 +98,13 @@ public class LoginActivity extends AppCompatActivity {
                                         if(errorResponse.contains("Bad")) {
 
                                             Toast.makeText(getApplicationContext(),
-                                                    "Invalid credentials", Toast.LENGTH_SHORT).show();
+                                                    LoginActivity.this.getResources().getString(R.string.bad_request), Toast.LENGTH_SHORT).show();
                                             return;
                                         }
-                                        Log.e("WORKS", errorResponse);
-
                                     }
 
                                     Toast.makeText(getApplicationContext(),
-                                            "Failed to connect to server", Toast.LENGTH_SHORT).show();
+                                            LoginActivity.this.getResources().getString(R.string.failed_server), Toast.LENGTH_SHORT).show();
                                 }
                             }
                     );
@@ -106,4 +117,55 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(registerIntent);
         });
     }
+
+    private void setupSpinnerSelection() {
+        Spinner spinner = findViewById(R.id.selectLangSpinner);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.lang_array, android.R.layout.simple_spinner_item);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinner.setAdapter(adapter);
+    }
+
+    private void onSpinnerChanged() {
+        Spinner spinner = findViewById(R.id.selectLangSpinner);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if (adapterView.getSelectedItemPosition() == 1)
+                {
+                     changeLocale("en");
+                }
+                else if(adapterView.getSelectedItemPosition() == 2)
+                {
+                    changeLocale("el");
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+    private void changeLocale(String language) {
+        Locale locale = new Locale(language);
+        Resources resources = this.getResources();
+        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+
+        Locale.setDefault(locale);
+
+        Configuration config = resources.getConfiguration();
+        config.setLocale(locale);
+
+       resources.updateConfiguration(config, displayMetrics);
+    }
+
 }
