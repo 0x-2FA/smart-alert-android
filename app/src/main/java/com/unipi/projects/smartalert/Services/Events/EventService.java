@@ -1,5 +1,6 @@
 package com.unipi.projects.smartalert.Services.Events;
 
+import com.unipi.projects.smartalert.Model.Events.EventUserStatisticsRequest;
 import com.unipi.projects.smartalert.Model.Events.SendEventRequest;
 import com.unipi.projects.smartalert.Services.Auth.AuthResult;
 import com.unipi.projects.smartalert.Services.Auth.IAuthHttp;
@@ -39,6 +40,19 @@ public class EventService implements IEventService{
         IEventHttp eventHttp = RetrofitService.retrofit.create(IEventHttp.class);
 
         Single<EventResult> eventCall = eventHttp.SendEvent(sendEventRequest);
+
+        return eventCall;
+    }
+
+    @Override
+    public Single<EventUserStatisticsResult> GetEventUserStatistics(String id) {
+        EventUserStatisticsRequest request = new EventUserStatisticsRequest();
+
+        request.setId(id);
+
+        IEventHttp eventHttp = RetrofitService.retrofit.create(IEventHttp.class);
+
+        Single<EventUserStatisticsResult> eventCall = eventHttp.GetUserStatistics(request.getId());
 
         return eventCall;
     }
