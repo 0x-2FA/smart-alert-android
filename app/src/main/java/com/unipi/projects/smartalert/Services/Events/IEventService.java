@@ -10,4 +10,5 @@ public interface IEventService {
 
     public Single<EventResult> SendEvent(String type, String latitude, String longitude, String comment, String user_id);
 
+    public Single<EventUserStatisticsResult> GetEventUserStatistics(String id);
 }
