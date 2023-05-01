@@ -21,15 +21,25 @@ An Android app that enables civilians to report natural disasters in real-time, 
 
 <img src="screenshots/login-dark.png" alt="Login activity dark mode" width="200" />
 
+</div>
+
+<div>
+
 <img src="screenshots/register-english.png" alt="Register activity light mode" width="200" />
 
 <img src="screenshots/register-dark.png" alt="Register activity dark mode" width="200" />
 
 <img src="screenshots/stats-light.png" alt="Statistics activity light mode" width="200" />
 
+</div>
+
+<div>
+
 <img src="screenshots/login-greek.png" alt="Login activity translated in greek" width="200" />
 
 <img src="screenshots/register-greek.png" alt="Register activity translated in greek" width="200" />
+
+</div>
 
 ## Authors
 
