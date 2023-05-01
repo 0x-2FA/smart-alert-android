@@ -87,10 +87,8 @@ public class MainActivity extends AppCompatActivity {
                         singleEventResult = eventService
                                 .SendEvent(
                                     selectedType,
-                                        "123",
-                                        "123",
-                                    //_lat.toString(),
-                                    //_long.toString(),
+                                    _lat.toString(),
+                                    _long.toString(),
                                     userId
                                 );
 
@@ -102,10 +100,8 @@ public class MainActivity extends AppCompatActivity {
                         singleEventResult = eventService
                                 .SendEvent(
                                         selectedType,
-                                        "123",
-                                        "123",
-//                                        _lat.toString(),
-//                                        _long.toString(),
+                                       _lat.toString(),
+                                       _long.toString(),
                                         comment,
                                         userId
                                 );
@@ -173,11 +169,6 @@ public class MainActivity extends AppCompatActivity {
             public void onLocationChanged(@androidx.annotation.NonNull Location location) {
                 _lat = location.getLatitude();
                 _long = location.getLongitude();
-                Log.i("MOT", "ENVOKED onLocationChanged");
-
-                Log.i("MOT", "_lat = " + _lat.toString());
-                Log.i("MOT", "location = " + location);
-
             }
 
             @Override
@@ -193,7 +184,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProviderDisabled(@androidx.annotation.NonNull String provider) {
                 //LocationListener.super.onProviderDisabled(provider);
-                Log.e("MOT", provider);
             }
         };
     }
