@@ -15,25 +15,24 @@ An Android app that enables civilians to report natural disasters in real-time, 
 
 ## Screenshots
 
-![Login activity light mode](screenshots/login-light.png)
+<div>
 
-![Login activity dark mode](screenshots/login-dark.png)
+<img src="screenshots/login-light.png" alt="Login activity light mode" width="200" />
 
-![Register activity light mode](screenshots/register-english.png)
+<img src="screenshots/login-dark.png" alt="Login activity dark mode" width="200" />
 
-![Register activity dark mode](screenshots/register-dark.png)
+<img src="screenshots/register-english.png" alt="Register activity light mode" width="200" />
 
-![Statistics activity light mode](screenshots/stats-light.png)
+<img src="screenshots/register-dark.png" alt="Register activity dark mode" width="200" />
 
-![Login activity translated in greek](screenshots/login-greek.png)
+<img src="screenshots/stats-light.png" alt="Statistics activity light mode" width="200" />
 
-![Register activity translated in greek](screenshots/register-greek.png)
+<img src="screenshots/login-greek.png" alt="Login activity translated in greek" width="200" />
+
+<img src="screenshots/register-greek.png" alt="Register activity translated in greek" width="200" />
 
 ## Authors
 
 - [@0x-2FA](https://www.github.com/0x-2FA)
 - [@SophiaNikolia](https://github.com/SophiaNikolia)
 - [@spentzaris](https://github.com/spentzaris)
-
-
-
